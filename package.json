@@ -1,6 +1,8 @@
 {
   "name": "@dwidge/hooks-expo",
-  "version": "0.0.1",
+  "version": "0.0.2",
+  "description": "A set of hooks for Expo.",
+  "repository": "github:dwidge/hooks-expo",
   "main": "./dist/cjs/index.js",
   "module": "./dist/esm/index.js",
   "types": "./dist/types/index.d.ts",
@@ -16,28 +18,33 @@
     "src"
   ],
   "scripts": {
-    "prepare": "rimraf dist && ncp assets/ dist/ && tsc && tsc --project tsconfig.esm.json"
+    "prepare": "rimraf dist && ncp assets/ dist/ && tsc && tsc --project tsconfig.esm.json",
+    "test": "node --test"
   },
-  "peerDependencies": {
+  "dependencies": {
     "@dwidge/country": "^0.0.1",
-    "@dwidge/crud-api-react": "^0.0.2",
+    "@dwidge/crud-api-react": "^0.0.6",
     "@dwidge/timezone": "^0.0.1",
     "expo-device": "^6.0.2",
     "expo-localization": "^15.0.3",
     "expo-network": "^6.0.1",
     "expo-router": "^3.5.23",
-    "react": "^18.2",
-    "react-native": "^0.75.3",
+    "react": "^18.3",
+    "react-native": "^0.75.4",
     "react-native-promise-rejection-utils": "^0.0.1",
     "react-native-web": "^0.19.12",
     "zod": "^3.23.8"
   },
   "devDependencies": {
     "ncp": "^2.0.0",
-    "rimraf": "^5.0.5",
-    "typescript": "^5.2.2"
+    "rimraf": "^6.0.1",
+    "typescript": "^5.6.3"
   },
   "publishConfig": {
     "access": "public"
+  },
+  "packageManager": "pnpm@9.12.1",
+  "engines": {
+    "node": ">=20"
   }
 }
