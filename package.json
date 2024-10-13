@@ -1,6 +1,6 @@
 {
   "name": "@dwidge/hooks-expo",
-  "version": "0.0.2",
+  "version": "0.0.5",
   "description": "A set of hooks for Expo.",
   "repository": "github:dwidge/hooks-expo",
   "main": "./dist/cjs/index.js",
@@ -18,19 +18,19 @@
     "src"
   ],
   "scripts": {
-    "prepare": "rimraf dist && ncp assets/ dist/ && tsc && tsc --project tsconfig.esm.json",
-    "test": "node --test"
+    "prepare": "rimraf dist && ncp assets/ dist/ && tsc -b . tsconfig.cjs.json",
+    "test": "node --enable-source-maps --test --test-name-pattern"
   },
-  "dependencies": {
-    "@dwidge/country": "^0.0.1",
-    "@dwidge/crud-api-react": "^0.0.6",
+  "peerDependencies": {
+    "@dwidge/country": "^0.0.3",
+    "@dwidge/crud-api-react": "^0.0.9",
     "@dwidge/timezone": "^0.0.1",
     "expo-device": "^6.0.2",
     "expo-localization": "^15.0.3",
     "expo-network": "^6.0.1",
     "expo-router": "^3.5.23",
-    "react": "^18.3",
-    "react-native": "^0.75.4",
+    "react": "^18.2.0",
+    "react-native": "^0.74.5",
     "react-native-promise-rejection-utils": "^0.0.1",
     "react-native-web": "^0.19.12",
     "zod": "^3.23.8"

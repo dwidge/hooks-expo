@@ -12,8 +12,8 @@ importers:
         specifier: ^0.0.1
         version: 0.0.1
       '@dwidge/crud-api-react':
-        specifier: ^0.0.6
-        version: 0.0.6
+        specifier: ^0.0.7
+        version: 0.0.7
       '@dwidge/timezone':
         specifier: ^0.0.1
         version: 0.0.1
@@ -822,8 +822,8 @@ packages:
   '@dwidge/country@0.0.1':
     resolution: {integrity: sha512-L4alPdHXjiqyXX/A6EszoIYCgVE7SVlDjnNey3F+KRj+SFJzTnDHa5tMEvZmtsvCstMZcXznjYN4y4q7SderMw==}
 
-  '@dwidge/crud-api-react@0.0.6':
-    resolution: {integrity: sha512-/IaryuBY4dFyYD7r7tvR0fgpg79BhjaC3LEfithtjqV0HiyyscvbvrV9XCDfoSXyG6J5Bb852gaJfA2WpZ2tdQ==}
+  '@dwidge/crud-api-react@0.0.7':
+    resolution: {integrity: sha512-mt6j2UwmA5SzoYB1+SgA0qILq+5dUGy4J0ualofvSiT6lwk0M2zWMcx3z1ZPHzY0zGLli7I/t9AxfErOi6ZGig==}
     engines: {node: '>=20'}
 
   '@dwidge/query-axios-zod@0.0.6':
@@ -5305,7 +5305,7 @@ snapshots:
 
   '@dwidge/country@0.0.1': {}
 
-  '@dwidge/crud-api-react@0.0.6':
+  '@dwidge/crud-api-react@0.0.7':
     dependencies:
       '@dwidge/query-axios-zod': 0.0.6
       axios: 1.7.7
