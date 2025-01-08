@@ -11,13 +11,13 @@ import {
 
 export type NavPush = (
   href?: string,
-  params?: Record<string, string | number | undefined>
+  params?: Record<string, string | number | undefined>,
 ) => void;
 
 export const useNavigation = (
   navigation = useRouter(),
   pathname = usePathname(),
-  searchParams = useLocalSearchParams() as Record<string, string>
+  searchParams = useLocalSearchParams() as Record<string, string>,
 ) => ({
   ...navigation,
   up: () => {
@@ -30,10 +30,14 @@ export const useNavigation = (
       (href +
         (params
           ? "?" + new URLSearchParams(toStringValues(params)).toString()
-          : "")) as Href
+          : "")) as Href,
     )) as NavPush,
 });
 export type Navigation = ReturnType<typeof useNavigation>;
 
 const toStringValues = (o: object) =>
-  Object.fromEntries(Object.entries(o).map(([k, v]) => [k, v.toString()]));
+  Object.fromEntries(
+    Object.entries(o)
+      .filter(([k, v]) => v != undefined)
+      .map(([k, v]) => [k, v.toString()]),
+  );
