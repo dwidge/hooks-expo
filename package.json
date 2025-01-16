@@ -1,6 +1,6 @@
 {
   "name": "@dwidge/hooks-expo",
-  "version": "0.0.9",
+  "version": "0.0.10",
   "description": "A set of hooks for Expo.",
   "repository": "github:dwidge/hooks-expo",
   "main": "./dist/cjs/index.js",
@@ -23,7 +23,7 @@
   },
   "peerDependencies": {
     "@dwidge/country": "^0.0.3",
-    "@dwidge/crud-api-react": "^0.0.13",
+    "@dwidge/crud-api-react": "^0.0.14",
     "@dwidge/timezone": "^0.0.1",
     "expo-device": "^6.0.2",
     "expo-localization": "^15.0.3",
