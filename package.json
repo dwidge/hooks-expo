@@ -1,6 +1,6 @@
 {
   "name": "@dwidge/hooks-expo",
-  "version": "0.0.16",
+  "version": "0.0.17",
   "description": "A set of hooks for Expo.",
   "repository": "github:dwidge/hooks-expo",
   "main": "./dist/cjs/index.js",
