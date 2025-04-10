@@ -2,14 +2,16 @@
 // Distributed under the Boost Software License, Version 1.0.
 // https://www.boost.org/LICENSE_1_0.txt
 
-import { NavPush, useNavigation } from "./useNavigation";
+import { useDeepMemo } from "@dwidge/hooks-react";
 import { useLocalSearchParams } from "expo-router";
+import { useCallback } from "react";
+import { NavPush, useNavigation } from "./useNavigation";
 
 export const useNavAction = (
   href: string,
   action: () => Promise<
     Record<string, string | number | undefined> | undefined
-  > = async () => undefined
+  > = async () => undefined,
 ) => {
   const navigation = useNavigation();
   if (!action) return;
@@ -17,14 +19,17 @@ export const useNavAction = (
 };
 
 export const useNav = (): NavPush => {
-  const local = useLocalSearchParams() as Record<string, string>;
+  const local = useDeepMemo(useLocalSearchParams() as Record<string, string>);
   const navigation = useNavigation();
-  return (href, params) =>
-    href === ".."
-      ? navigation.up()
-      : href
-        ? navigation.push(href, { ...local, ...params })
-        : navigation.dismissAll();
+  return useCallback(
+    (href, params) =>
+      href === ".."
+        ? navigation.up()
+        : href
+          ? navigation.push(href, { ...local, ...params })
+          : navigation.dismissAll(),
+    [local, navigation],
+  );
 };
 
 export const useNavAction2 = <A extends any[]>(
@@ -32,7 +37,7 @@ export const useNavAction2 = <A extends any[]>(
   action?: (
     ...a: A
   ) => Promise<Record<string, string | number | undefined> | null | undefined>,
-  nav = useNav()
+  nav = useNav(),
 ): ((...a: A) => Promise<void>) | undefined =>
   action
     ? (...a: A) =>

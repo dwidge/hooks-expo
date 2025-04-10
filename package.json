@@ -24,6 +24,7 @@
   "peerDependencies": {
     "@dwidge/country": "^0.0.4",
     "@dwidge/crud-api-react": "^0.0.28",
+    "@dwidge/hooks-react": "^0.0.16",
     "@dwidge/timezone": "^0.0.2",
     "expo-device": "^6.0.2",
     "expo-localization": "^15.0.3",
