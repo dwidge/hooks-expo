@@ -26,6 +26,7 @@
     "@dwidge/crud-api-react": "^0.0.31",
     "@dwidge/hooks-react": "^0.0.19",
     "@dwidge/timezone": "^0.0.4",
+    "@dwidge/utils-js": "^0.0.19",
     "expo-device": "^6.0.2",
     "expo-localization": "^15.0.3",
     "expo-network": "^6.0.1",
