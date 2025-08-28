@@ -1,3 +1,5 @@
+export * from "./getExpoBuildNumber.js";
+export * from "./getExpoVersionNumber.js";
 export * from "./useDeviceInfo.js";
 export * from "./useFormatDate.js";
 export * from "./useNavAction.js";
